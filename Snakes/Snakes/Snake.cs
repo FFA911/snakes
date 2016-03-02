@@ -9,7 +9,7 @@ namespace Snakes
     class Snake : Figure
     {
 
-        Direction direction;
+       public Direction direction;
 
         public Snake ( Point tail, int lenght, Direction direction)
         {
@@ -39,7 +39,6 @@ namespace Snakes
             Point nextPoint = new Point(head);
             nextPoint.Move(1, direction);
             return nextPoint; 
-        }
-
+        }        
     }
 }

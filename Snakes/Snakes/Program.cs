@@ -27,25 +27,23 @@ namespace Snakes
             snake.Drow();
             snake.Move();
 
-            Thread.Sleep(300);
-            snake.Move();
-            Thread.Sleep(300);
-            snake.Move();
-            Thread.Sleep(300);
-            snake.Move();
-            Thread.Sleep(300);
-            snake.Move();
-            Thread.Sleep(300);
-            snake.Move();
-            Thread.Sleep(300);
-            snake.Move();
-            Thread.Sleep(300);
-            snake.Move();
-            Thread.Sleep(300);
-            snake.Move();
-
-
-            Console.ReadLine();
-        }
+           while(true)
+            {
+                if(Console.KeyAvailable)
+                {
+                    ConsoleKeyInfo key = Console.ReadKey();
+                    if (key.Key == ConsoleKey.LeftArrow && snake.direction != Direction.RIGHT)
+                        snake.direction = Direction.LEFT;
+                    else if (key.Key == ConsoleKey.RightArrow && snake.direction != Direction.LEFT)
+                        snake.direction = Direction.RIGHT;
+                    else if (key.Key == ConsoleKey.DownArrow && snake.direction != Direction.UP)
+                        snake.direction = Direction.DOWN;
+                    else if (key.Key == ConsoleKey.UpArrow && snake.direction != Direction.DOWN)
+                        snake.direction = Direction.UP;
+                }
+                Thread.Sleep(100);
+                snake.Move();
+            }
+    }
     }
 }

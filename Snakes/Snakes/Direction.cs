@@ -11,6 +11,6 @@ namespace Snakes
         RIGHT,
         LEFT,
         UP,
-        DOWN
+        DOWN       
     }
 }
